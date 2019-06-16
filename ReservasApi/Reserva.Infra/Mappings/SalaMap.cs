@@ -22,8 +22,7 @@ namespace Reserva.Infra.Mappings
 
             builder.HasOne(h => h.Filial)
                 .WithMany(w => w.Salas)
-                .HasForeignKey(k => k.FilialId)
-                .HasPrincipalKey(p => p.SalaId);
+                .HasForeignKey(k => k.FilialId);
         }
     }
 }

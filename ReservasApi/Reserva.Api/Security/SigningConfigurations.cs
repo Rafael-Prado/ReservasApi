@@ -14,7 +14,7 @@ namespace Reserva.Api.Security
 
         public SigningConfigurations()
         {
-            using (var provider = new RSACryptoServiceProvider(5048))
+            using (var provider = new RSACryptoServiceProvider(2048))
             {
                 Key = new RsaSecurityKey(provider.ExportParameters(true));
             }

@@ -16,7 +16,6 @@ namespace Reserva.Domain.Entities
         public int FilialId { get; private set; }
         public string Nome { get; private set; }
         public int QuantidadeSala { get; private set; }
-        public int SalaId { get; set; }
         public virtual ICollection<Sala> Salas { get; private set; }
     }
 }

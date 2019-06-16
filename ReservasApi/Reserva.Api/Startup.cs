@@ -22,6 +22,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Reserva.Application.Services.Interfaces;
 using Reserva.Application.Services;
+using Reserva.Application.Services.Intefaces;
 
 namespace Reserva.Api
 {
@@ -57,18 +58,22 @@ namespace Reserva.Api
                 options => options.UseSqlServer(Configuration.GetConnectionString("CnnStr")));
             
             services.AddScoped<ReservaContext, ReservaContext>();
+            services.AddScoped<ReservaStoreContext, ReservaStoreContext>();
             services.AddTransient<IUow, Uow>();
             services.AddScoped<TokenConfigurations, TokenConfigurations>();
             services.AddScoped<SigningConfigurations, SigningConfigurations>();
 
             //Service
             services.AddTransient<IUsuarioService, UsuarioService>();
+            services.AddTransient<IFilialService, FilialService>();
 
             //Repository
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IFilialRepository, FilialRepository>();
 
             //Hadler
             services.AddTransient<UsuarioHandler, UsuarioHandler>();
+            services.AddTransient<FilialHandler, FilialHandler>();
 
             //Configurando Token
 

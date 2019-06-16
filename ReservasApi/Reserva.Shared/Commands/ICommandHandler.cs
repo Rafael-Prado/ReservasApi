@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Reserva.Shared.Commands
 {
-    public interface ICommandHandle<T> where T: ICommand
+    public interface ICommandHandle<T> where T: ICommadResult
     {
         ICommadResult Handle(T commad);
     }

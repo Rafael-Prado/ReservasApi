@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Reserva.Shared.Commands
+namespace Reserva.Domain.Command.Result
 {
-    public interface ICommad
+    public class SalaCommandResult
     {
-        
     }
 }

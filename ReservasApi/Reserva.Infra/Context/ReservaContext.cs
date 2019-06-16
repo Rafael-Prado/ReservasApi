@@ -8,7 +8,6 @@ namespace Reserva.Infra.Context
 {
     public class ReservaContext: DbContext
     {
-       
         public ReservaContext(DbContextOptions<ReservaContext> options)
         : base(options)
         { }

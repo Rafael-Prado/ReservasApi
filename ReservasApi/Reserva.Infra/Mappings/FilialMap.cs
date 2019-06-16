@@ -15,11 +15,7 @@ namespace Reserva.Infra.Mappings
                 .HasMaxLength(100);
 
             builder.Property(p => p.QuantidadeSala);
-
-            builder.HasMany(h => h.Salas)
-                .WithOne(w => w.Filial)
-                .HasForeignKey(k => k.SalaId)
-                .HasPrincipalKey(p => p.FilialId);
+            
 
         }
     }

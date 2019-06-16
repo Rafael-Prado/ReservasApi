@@ -1,4 +1,5 @@
 ﻿
+using Reserva.Shared.Commands;
 using System.Collections.Generic;
 
 namespace Reserva.Domain.Command.Input
