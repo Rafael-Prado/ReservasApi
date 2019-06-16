@@ -8,6 +8,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Reserva.Domain\Reserva.Domain.csproj" />
+    <ProjectReference Include="..\Reserva.Infra\Reserva.Infra.csproj" />
+    <ProjectReference Include="..\Reserva.Shared\Reserva.Shared.csproj" />
+    <ProjectReference Include="..\Service.Application\Reserva.Application.csproj" />
   </ItemGroup>
 
 </Project>
