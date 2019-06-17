@@ -67,16 +67,19 @@ namespace Reserva.Api
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddTransient<IFilialService, FilialService>();
             services.AddTransient<ISalaService, SalaService>();
+            services.AddTransient<IReservaService, ReservaService>();
 
             //Repository
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IFilialRepository, FilialRepository>();
             services.AddTransient<ISalaRepository, SalaRepository>();
+            services.AddTransient<IReservaRepository, ReservaRepository>();
 
             //Hadler
             services.AddTransient<UsuarioHandler, UsuarioHandler>();
             services.AddTransient<FilialHandler, FilialHandler>();
             services.AddTransient<SalaHandler, SalaHandler>();
+            services.AddTransient<ReservaHandler, ReservaHandler>();
 
             //Configurando Token
 

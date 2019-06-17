@@ -26,6 +26,9 @@ namespace Reserva.Infra.Mappings
                .IsRequired();
             builder.Property(p => p.QuantidadePessoa)
                .IsRequired();
+
+            builder.Property(p => p.SalaId)
+              .IsRequired();
         }
     }
 }

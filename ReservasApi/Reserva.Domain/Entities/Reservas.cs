@@ -13,7 +13,8 @@ namespace Reserva.Domain.Entities
             DateTime horaFim, 
             bool café, 
             int quantidadePessoa,
-            int usuarioId 
+            int usuarioId ,
+            int salaId
             )
         {
             ReservaId = reservaId;
@@ -24,7 +25,7 @@ namespace Reserva.Domain.Entities
             Café = café;
             QuantidadePessoa = quantidadePessoa;
             UsuarioId = usuarioId;
-            Salas = new HashSet<Sala>();
+            SalaId = salaId;
         }
 
         public int ReservaId { get; private set; }
@@ -35,8 +36,8 @@ namespace Reserva.Domain.Entities
         public bool Café { get; private set; }
         public int QuantidadePessoa { get; private set; }
         public int UsuarioId { get; private set; }
+        public int SalaId { get; private set; }
 
-        public virtual ICollection<Sala> Salas { get; private set; }
 
     }
 }

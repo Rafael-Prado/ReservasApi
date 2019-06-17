@@ -11,7 +11,7 @@ namespace Reserva.Domain.Command.Input
         public DateTime HoraFim { get;  set; }
         public bool Café { get;  set; }
         public int QuantidadePessoa { get;  set; }
-
-        public UsuarioCommandRegister Responsavel { get;  set; }
+        public int UsuarioId { get;  set; }
+        public int SalaId { get; set; }
     }
 }
