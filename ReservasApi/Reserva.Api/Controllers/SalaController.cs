@@ -5,25 +5,49 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Reserva.Application.Services.Intefaces;
+using Reserva.Domain.Command.Input;
+using Reserva.Domain.Command.Result;
 
 namespace Reserva.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("v1/api/[controller]")]
     [ApiController]
     [Authorize("Bearer")]
     public class SalaController : ControllerBase
     {
+        private readonly ISalaService _service;
+
+        public SalaController(ISalaService service)
+        {
+            _service = service;
+        }
         // GET: api/Sala
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<SalaCommandResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            var result = _service.ListarSalas();
+            return result;
         }
 
         // POST: api/Sala
         [HttpPost]
-        public void Post([FromBody] string value)
+        public object Post(SalaCommandRegister commad)
         {
+            if (!string.IsNullOrEmpty(commad.NomeSala))
+            {
+                var result = _service.SalvarSala(commad);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+
+            return new
+            {
+                NotFound = true,
+                message = "Falha ao salvar Sala"
+            };
         }
 
         // PUT: api/Sala/5
