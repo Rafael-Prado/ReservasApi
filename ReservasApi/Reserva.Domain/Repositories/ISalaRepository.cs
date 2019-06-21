@@ -11,5 +11,6 @@ namespace Reserva.Domain.Repositories
         IEnumerable<SalaCommandResult> ListarSalas();
         bool ExiteSala(int filialId, string nomeSala);
         int Salvar(Sala sala);
+        SalaCommandResult GetSalaId(int salaId);
     }
 }

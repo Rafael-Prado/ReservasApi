@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Reserva.Domain.Entities
 {
@@ -7,9 +6,9 @@ namespace Reserva.Domain.Entities
     {
         public Reservas(
             int reservaId, 
-            DateTime dataInicio, 
+            DateTime dataInicio,
             DateTime horaInicio, 
-            DateTime dataFim, 
+            DateTime dataFim,
             DateTime horaFim, 
             bool café, 
             int quantidadePessoa,

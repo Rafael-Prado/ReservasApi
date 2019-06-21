@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Reserva.Application.Services.Intefaces;
 using Reserva.Domain.Command.Input;
 using Reserva.Domain.Command.Result;
@@ -13,7 +14,8 @@ namespace Reserva.Api.Controllers
 {
     [Route("v1/api/[controller]")]
     [ApiController]
-    [Authorize("Bearer")]
+    //[Authorize("Bearer")]
+    [AllowAnonymous]
     public class ReservasController : ControllerBase
     {
         private readonly IReservaService _service;
@@ -30,14 +32,34 @@ namespace Reserva.Api.Controllers
             var result = _service.Listar();
             return result;
         }
-
         // POST: api/Reservas
         [HttpPost]
-        public object Post(ReservaCommandRegister commad)
+        public object Post(object obj)
         {
-            if (commad.HoraInicio != null)
+            ReservaCommandRegister command = JsonConvert.DeserializeObject<ReservaCommandRegister>(obj.ToString());
+            if (command.HoraInicio != null)
             {
-                var result = _service.Salvar(commad);
+                var result = _service.Salvar(command);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+            return new
+            {
+                NotFound = true,
+                message = "Reserva não pode ser feita."
+            };
+        }
+
+
+        // POST: api/Reservas
+        [HttpGet("details/{id}")]
+        public object Details(int id)
+        {
+            if (id != 0)
+            {
+                var result = _service.GetReservaId(id);
                 if (result != null)
                 {
                     return result;
@@ -51,7 +73,7 @@ namespace Reserva.Api.Controllers
         }
 
         // PUT: api/Reservas/5
-        [HttpPut("{id}")]
+        [HttpPut("Editar/{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }

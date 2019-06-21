@@ -11,5 +11,6 @@ namespace Reserva.Application.Services.Intefaces
         IEnumerable<ReservaCommadResult> Listar();
         ReservaCommadResultRegister Salvar(ReservaCommandRegister commad);
         void removeReserva(int id);
+        ReservaCommadResult GetReservaId(int id);
     }
 }

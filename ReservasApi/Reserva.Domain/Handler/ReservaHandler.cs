@@ -21,9 +21,9 @@ namespace Reserva.Domain.Handler
         {
             var reserva = new Reservas(
                 commad.ReservaId,
-                commad.DataInicio,
-                commad.DataFim,
+                commad.DataInicio,                
                 commad.HoraInicio,
+                commad.DataFim,
                 commad.HoraFim,
                 commad.Café,
                 commad.QuantidadePessoa,

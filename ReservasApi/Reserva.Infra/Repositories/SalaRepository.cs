@@ -32,6 +32,14 @@ namespace Reserva.Infra.Repositories
                 ).FirstOrDefault();
         }
 
+        public SalaCommandResult GetSalaId(int salaId)
+        {
+            var sql = "select * from Sala where SalaId = @SalaId";
+            return _contextStore.Connection.Query<SalaCommandResult>(
+                    sql, new { SalaId = salaId }
+                ).FirstOrDefault(); ;
+        }
+
         public IEnumerable<SalaCommandResult> ListarSalas()
         {
             var sql = "select * from Sala ";

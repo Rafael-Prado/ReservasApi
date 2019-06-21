@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Reserva.Api.Controllers
@@ -23,7 +20,7 @@ namespace Reserva.Api.Controllers
         // POST: api/Usuario
         [HttpPost]
         public void Post([FromBody] string value)
-        {
+        {            
         }
 
         // PUT: api/Usuario/5
