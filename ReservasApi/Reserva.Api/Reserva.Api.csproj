@@ -15,7 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Reserva.Domain\Reserva.Domain.csproj" />
     <ProjectReference Include="..\Reserva.Infra\Reserva.Infra.csproj" />
-    <ProjectReference Include="..\Reserva.Shared\Reserva.Shared.csproj" />
     <ProjectReference Include="..\Service.Application\Reserva.Application.csproj" />
   </ItemGroup>
 

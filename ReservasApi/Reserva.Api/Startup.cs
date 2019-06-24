@@ -13,7 +13,6 @@ using Reserva.Domain.Handler;
 using Reserva.Domain.Repositories;
 using Reserva.Infra.Context;
 using Reserva.Infra.Transactions;
-using Reserva.Shared;
 using Reserva.Infra.Repositories;
 using Reserva.Api.Security;
 using Reserva.Domain.Entities;
@@ -23,6 +22,7 @@ using Microsoft.AspNetCore.Authorization;
 using Reserva.Application.Services.Interfaces;
 using Reserva.Application.Services;
 using Reserva.Application.Services.Intefaces;
+using Microsoft.AspNetCore.Http;
 
 namespace Reserva.Api
 {
@@ -62,6 +62,8 @@ namespace Reserva.Api
             services.AddTransient<IUow, Uow>();
             services.AddScoped<TokenConfigurations, TokenConfigurations>();
             services.AddScoped<SigningConfigurations, SigningConfigurations>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<AuthenticatedUser>();
 
             //Service
             services.AddTransient<IUsuarioService, UsuarioService>();
@@ -147,8 +149,6 @@ namespace Reserva.Api
             app.UseHttpsRedirection();
             app.UseMvc();
 
-            
-            Runtime.ConnectionString = Configuration.GetConnectionString("CnnStr");
         }
     }
 }

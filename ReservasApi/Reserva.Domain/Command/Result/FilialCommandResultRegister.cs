@@ -1,11 +1,7 @@
-﻿using Reserva.Shared.Commands;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace Reserva.Domain.Command.Result
 {
-    public class FilialCommandResultRegister: ICommadResult
+    public class FilialCommandResultRegister
     {
         public FilialCommandResultRegister(int filialId, string nome)
         {

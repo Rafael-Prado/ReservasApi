@@ -45,10 +45,10 @@ namespace Reserva.Api.Controllers
             if (credenciaisValidas)
             {
                 ClaimsIdentity identity = new ClaimsIdentity(
-                    new GenericIdentity(usuarioBase.UsuarioId.ToString(), "Login"),
+                    new GenericIdentity(usuarioBase.UsuarioId.ToString()),
                     new[] {
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
-                        new Claim(JwtRegisteredClaimNames.UniqueName, usuarioBase.UsuarioId.ToString())
+                        new Claim(JwtRegisteredClaimNames.Sub, usuarioBase.UsuarioId.ToString())
                     }
                 );
 

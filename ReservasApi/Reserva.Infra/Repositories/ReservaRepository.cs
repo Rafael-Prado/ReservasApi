@@ -34,7 +34,7 @@ namespace Reserva.Infra.Repositories
                         where r.ReservaId = @ReservaId";
             return _contextStore.Connection.Query<ReservaCommadResult>(
                     sql, new {ReservaId = id}
-                ).First();
+                ).FirstOrDefault();
         }
 
         public IEnumerable<ReservaCommadResult> GetReservaSala(ReservaCommandRegister commad)

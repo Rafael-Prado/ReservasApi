@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Reserva.Domain.Entities;
 using Reserva.Infra.Mappings;
-using Reserva.Shared;
 
 namespace Reserva.Infra.Context
 {

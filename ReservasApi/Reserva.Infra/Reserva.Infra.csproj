@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Reserva.Domain\Reserva.Domain.csproj" />
-    <ProjectReference Include="..\Reserva.Shared\Reserva.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

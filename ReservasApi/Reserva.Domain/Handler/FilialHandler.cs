@@ -2,9 +2,6 @@
 using Reserva.Domain.Command.Result;
 using Reserva.Domain.Entities;
 using Reserva.Domain.Repositories;
-using Reserva.Shared.Commands;
-using System;
-using System.Text;
 
 namespace Reserva.Domain.Handler
 {

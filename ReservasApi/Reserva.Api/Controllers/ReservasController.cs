@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Reserva.Application.Services;
 using Reserva.Application.Services.Intefaces;
 using Reserva.Domain.Command.Input;
 using Reserva.Domain.Command.Result;
@@ -14,21 +12,24 @@ namespace Reserva.Api.Controllers
 {
     [Route("v1/api/[controller]")]
     [ApiController]
-    //[Authorize("Bearer")]
+    [Authorize("Bearer")]
     [AllowAnonymous]
     public class ReservasController : ControllerBase
     {
         private readonly IReservaService _service;
+        private readonly AuthenticatedUser _user;
 
-        public ReservasController(IReservaService service)
+        public ReservasController(IReservaService service, AuthenticatedUser user)
         {
             _service = service;
+            _user = user;
         }
 
         // GET: api/Reservas
         [HttpGet]
         public IEnumerable<ReservaCommadResult> Get()
         {
+            
             var result = _service.Listar();
             return result;
         }
@@ -36,9 +37,15 @@ namespace Reserva.Api.Controllers
         [HttpPost]
         public object Post(object obj)
         {
+            
             ReservaCommandRegister command = JsonConvert.DeserializeObject<ReservaCommandRegister>(obj.ToString());
             if (command.HoraInicio != null)
             {
+                var horainicio = command.DataInicio.ToString("dd-MM-yyyy") +" "+ command.HoraInicio.TimeOfDay;
+                var horaFim = command.DataFim.ToString("dd-MM-yyyy") + " " + command.HoraFim.TimeOfDay;
+                command.HoraInicio = Convert.ToDateTime(horainicio);
+                command.HoraFim = Convert.ToDateTime(horaFim);
+
                 var result = _service.Salvar(command);
                 if (result != null)
                 {
@@ -73,9 +80,22 @@ namespace Reserva.Api.Controllers
         }
 
         // PUT: api/Reservas/5
-        [HttpPut("Editar/{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpGet("{id}")]
+        public object ReservaByID(int id)
         {
+            if (id != 0)
+            {
+                var result = _service.GetReservaId(id);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+            return new
+            {
+                NotFound = true,
+                message = "Reserva não pode ser feita."
+            };
         }
 
         // DELETE: api/ApiWithActions/5

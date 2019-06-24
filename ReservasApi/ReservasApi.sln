@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reserva.Api", "Reserva.Api\Reserva.Api.csproj", "{68232969-9789-46D0-A5D3-AC93EDC3C594}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reserva.Api", "Reserva.Api\Reserva.Api.csproj", "{68232969-9789-46D0-A5D3-AC93EDC3C594}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{014962F0-9C7A-4E64-AEFE-D799AA5512BD}"
 EndProject
@@ -13,19 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{DA4F4F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{7752648E-A3AF-41C6-9813-30F7879F98BA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{7CDD25D6-8700-43F1-B2C6-A43979FE864F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{EC3CF34E-FA5A-4884-9695-FA228E1D91B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reserva.Application", "Service.Application\Reserva.Application.csproj", "{A758B95D-FF9B-40AD-86FA-0430DA4212D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reserva.Application", "Service.Application\Reserva.Application.csproj", "{A758B95D-FF9B-40AD-86FA-0430DA4212D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reserva.Domain", "Reserva.Domain\Reserva.Domain.csproj", "{4A2B6C30-7985-4BA9-B7B4-8C575F45102E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reserva.Domain", "Reserva.Domain\Reserva.Domain.csproj", "{4A2B6C30-7985-4BA9-B7B4-8C575F45102E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reserva.Infra", "Reserva.Infra\Reserva.Infra.csproj", "{DFB55F7F-44F0-40EB-84CA-9BC497E83E69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reserva.Infra", "Reserva.Infra\Reserva.Infra.csproj", "{DFB55F7F-44F0-40EB-84CA-9BC497E83E69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reserva.Shared", "Reserva.Shared\Reserva.Shared.csproj", "{CDB47681-6E25-461E-8B52-16497462E856}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reserva.Tests", "Reserva.Tests\Reserva.Tests.csproj", "{4DE8BDBD-4D98-42B0-A453-38B51CF4D471}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reserva.Tests", "Reserva.Tests\Reserva.Tests.csproj", "{4DE8BDBD-4D98-42B0-A453-38B51CF4D471}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +45,6 @@ Global
 		{DFB55F7F-44F0-40EB-84CA-9BC497E83E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFB55F7F-44F0-40EB-84CA-9BC497E83E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFB55F7F-44F0-40EB-84CA-9BC497E83E69}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDB47681-6E25-461E-8B52-16497462E856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDB47681-6E25-461E-8B52-16497462E856}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDB47681-6E25-461E-8B52-16497462E856}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDB47681-6E25-461E-8B52-16497462E856}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DE8BDBD-4D98-42B0-A453-38B51CF4D471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DE8BDBD-4D98-42B0-A453-38B51CF4D471}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DE8BDBD-4D98-42B0-A453-38B51CF4D471}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -66,7 +58,6 @@ Global
 		{A758B95D-FF9B-40AD-86FA-0430DA4212D3} = {8E94676D-A48A-4D80-AAA2-F7DC9DB13751}
 		{4A2B6C30-7985-4BA9-B7B4-8C575F45102E} = {DA4F4F31-410C-416E-B504-3E909A3D69BE}
 		{DFB55F7F-44F0-40EB-84CA-9BC497E83E69} = {7752648E-A3AF-41C6-9813-30F7879F98BA}
-		{CDB47681-6E25-461E-8B52-16497462E856} = {7CDD25D6-8700-43F1-B2C6-A43979FE864F}
 		{4DE8BDBD-4D98-42B0-A453-38B51CF4D471} = {EC3CF34E-FA5A-4884-9695-FA228E1D91B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
